@@ -125,8 +125,14 @@ const (
 	// KindClusterConfig is the resource that holds cluster level configuration.
 	KindClusterConfig = "cluster_config"
 
-	// MetaNameClusterName is the exact name of the singleton resource.
+	// MetaNameClusterConfig is the exact name of the cluster config singleton resource.
 	MetaNameClusterConfig = "cluster-config"
+
+	// KindProxyConfig is the resource that holds proxy configuration
+	KindProxyConfig = "proxy_config"
+
+	// MetaNameProxyConfig is the exact name of the proxy config singleton resource.
+	MetaNameProxyConfig = "proxy-config"
 
 	// KindClusterName is a type of configuration resource that contains the cluster name.
 	KindClusterName = "cluster_name"

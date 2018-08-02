@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Gravitational, Inc.
+Copyright 2015-2018 Gravitational, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -183,6 +183,7 @@ func (a *authorizer) authorizeRemoteBuiltinRole(r RemoteBuiltinRole) (*AuthConte
 					services.NewRule(services.KindReverseTunnel, services.RO()),
 					services.NewRule(services.KindTunnelConnection, services.RO()),
 					services.NewRule(services.KindClusterConfig, services.RO()),
+					services.NewRule(services.KindProxyConfig, services.RO()),
 					// this rule allows remote proxy to update the cluster's certificate authorities
 					// during certificates renewal
 					{
@@ -278,6 +279,7 @@ func GetCheckerForBuiltinRole(clusterName string, clusterConfig services.Cluster
 							services.NewRule(services.KindRole, services.RO()),
 							services.NewRule(services.KindClusterAuthPreference, services.RO()),
 							services.NewRule(services.KindClusterConfig, services.RO()),
+							services.NewRule(services.KindProxyConfig, services.RW()),
 							services.NewRule(services.KindClusterName, services.RO()),
 							services.NewRule(services.KindStaticTokens, services.RO()),
 							services.NewRule(services.KindTunnelConnection, services.RW()),
@@ -329,6 +331,7 @@ func GetCheckerForBuiltinRole(clusterName string, clusterConfig services.Cluster
 						services.NewRule(services.KindRole, services.RO()),
 						services.NewRule(services.KindClusterAuthPreference, services.RO()),
 						services.NewRule(services.KindClusterConfig, services.RO()),
+						services.NewRule(services.KindProxyConfig, services.RW()),
 						services.NewRule(services.KindClusterName, services.RO()),
 						services.NewRule(services.KindStaticTokens, services.RO()),
 						services.NewRule(services.KindTunnelConnection, services.RW()),
